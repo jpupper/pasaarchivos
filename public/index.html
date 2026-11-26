@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PASAARCHIVOS — archivos en la red local</title>
+<meta name="description" content="Subí archivos sin límite de peso y bajalos desde cualquier equipo de la red local.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2306070b'/%3E%3Cpath d='M16 6v14m0 0-6-6m6 6 6-6M7 26h18' stroke='%2300d9ff' stroke-width='2.4' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css?v=4">
+</head>
+<body>
+<div class="fondo" aria-hidden="true"></div>
+
+<div class="app">
+
+  <header class="barra">
+    <div class="marca">
+      <h1>PASA<span>ARCHIVOS</span></h1>
+      <p class="sub">El drop de la red local. Tirás un archivo y queda entero en el servidor: sin límite de peso.</p>
+    </div>
+    <div class="chips">
+      <div class="chip" id="chip-servidor"><span class="punto"></span>en línea</div>
+      <div class="chip" id="chip-ip"><span class="rotulo">red</span><b id="ip-servidor">—</b></div>
+      <div class="chip" id="chip-disco"><span class="rotulo">libres</span><b id="disco-libre">—</b></div>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <section class="panel panel-subida" aria-labelledby="titulo-subida">
+      <h2 id="titulo-subida" class="panel-titulo">Subir</h2>
+
+      <input type="file" id="input" multiple hidden>
+
+      <div class="zona" id="zona" tabindex="0" role="button" aria-label="Elegir archivos para subir">
+        <svg class="zona-icono" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M24 32V10m0 0-8 8m8-8 8 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+          <path d="M9 20v18h30V20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+        <p class="zona-titulo">Arrastrá tus archivos acá</p>
+        <p class="zona-sub">o hacé click para elegirlos. Se guardan en <code id="zona-carpeta">files/</code></p>
+        <button type="button" class="primario" id="btn-elegir">Elegir archivos</button>
+        <p class="zona-nota">También podés pegar con Ctrl+V. Sin límite de peso, uno detrás de otro.</p>
+      </div>
+
+      <div class="cola" id="cola" aria-live="polite"></div>
+
+      <div class="pie-subida">
+        <span id="pie-subida-txt">Guardado directo a disco, sin pasar por memoria.</span>
+      </div>
+    </section>
+
+    <section class="panel panel-lista" aria-labelledby="titulo-lista">
+      <div class="lista-head">
+        <h2 id="titulo-lista">Archivos en el servidor <em id="conteo"></em></h2>
+        <div class="lista-acciones">
+          <input type="search" id="buscar" placeholder="filtrar por nombre…" autocomplete="off" spellcheck="false">
+          <button type="button" id="btn-actualizar">Actualizar</button>
+        </div>
+      </div>
+
+      <div class="tabla-guia" id="tabla-guia" aria-hidden="true">
+        <span>archivo</span><span>peso</span><span>subido</span><span></span>
+      </div>
+
+      <ul id="archivos"></ul>
+      <p class="vacio" id="vacio">Todavía no hay archivos. Arrastrá el primero arriba.</p>
+
+      <p class="linea-estado" id="status" role="status"></p>
+    </section>
+
+  </div>
+
+  <footer class="pie">
+    <p>Entrá desde cualquier equipo de la red con <button type="button" class="link" id="copiar-url"><b id="pie-url">—</b></button></p>
+    <p class="pie-ruta">Carpeta en el servidor: <code id="pie-carpeta">—</code></p>
+  </footer>
+
+</div>
+
+<script src="/app.js?v=4"></script>
+</body>
+</html>

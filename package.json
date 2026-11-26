@@ -1,0 +1,23 @@
+{
+  "name": "pasaarchivos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Servidor de archivos para la red local: sin límite de peso, sin base de datos y sin dependencias.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.15"
+  },
+  "keywords": [
+    "lan",
+    "file-server",
+    "file-drop",
+    "drag-and-drop",
+    "zero-dependencies",
+    "node"
+  ],
+  "author": "Julián Puppo (JPupper)",
+  "homepage": "https://fullscreencode.com"
+}

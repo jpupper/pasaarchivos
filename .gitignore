@@ -1,0 +1,17 @@
+# Archivos subidos: viven en la máquina, no en el repo
+files/
+
+# Captura original sin recortar (la del README está en docs/)
+captura.png
+
+# Logs de ejecución
+*.log
+
+# Node (no hay dependencias, pero por si acaso)
+node_modules/
+npm-debug.log*
+
+# Basura de sistema
+Thumbs.db
+desktop.ini
+.DS_Store
